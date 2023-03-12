@@ -1,8 +1,31 @@
-doctype = html 
+doctype html 
 html(lang="ko")
-    head
-        title #{pageTitle} | Recap 
-    body 
-        block content
+    head   
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css") 
+        title #{pageTitle} | Recap
+    
+    body
+        nav 
+            ul
+                li 
+                    a(href="/") home
+                li 
+                    a(href="/search") search 
+                if loggedIn
+                    li 
+                        a(href="/users/logout") logout
+                    li 
+                        a(href="/videos/upload") upload
+                    li 
+                        a(href="") #{loggedInUser.username}'s profile 
+                    li 
+                        a(href="/users/edit") edit profile 
+                if !loggedIn    
+                    li 
+                        a(href="/login") login
+                    li 
+                        a(href="/join") join 
 
-include ./partials/footer.pug
+        block content 
+    br
+    include patials/footer 

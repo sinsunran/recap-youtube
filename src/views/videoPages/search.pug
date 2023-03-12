@@ -1,0 +1,8 @@
+extends ../base 
+include ../mixins/video 
+block content 
+    form(method="get")
+        input(name="keyword", required, type="text",placeholder="please put any words you want to search") 
+        input(value="Search!", type="submit") 
+    each video in videos
+        +video(video) 

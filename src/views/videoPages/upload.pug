@@ -1,0 +1,8 @@
+extends ../base 
+block content 
+    form(method="POST",enctype="multipart/form-data")
+        input(name="video",type="file",accept="video/*" ,requird)
+        input(name="title",placeholder="title", requird)
+        input(name="description",placeholder="description", requird)
+        input(name="hashtags",placeholder="hashtags", requird)
+        button(type="submit") upload

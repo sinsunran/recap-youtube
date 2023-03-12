@@ -1,0 +1,15 @@
+extends ../base 
+block content 
+    if errorMessage
+        h4=errorMessage
+    form(method="post")
+        input(name="email",placeholder="email",required,type="email") 
+        input(name="password",placeholder="password",required,type="password") 
+        input(name="password1",placeholder="password confirmation",required,type="password") 
+        input(name="username",placeholder="username",required,type="text") 
+        input(name="name",placeholder="name",required,type="text") 
+        input(name="location",placeholder="location",required,type="text") 
+        input(value="Join!",type="submit") 
+    br
+    h4 if you already have account
+    a(href="/login") go to login 
